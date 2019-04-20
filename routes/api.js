@@ -6,7 +6,7 @@ router.get('/book_list/:page', async (req, res, next) => {
     let pageNo = Number(req.params.page);
 
     // check if page is a valid numeric value
-    if(! Number.isInteger(pageNo) || page <= 0){
+    if(! Number.isInteger(pageNo) || pageNo <= 0){
       return res.status(400).send({
         'error' : true,
         'message' : "page path param is not correct",
